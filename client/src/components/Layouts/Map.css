@@ -1,0 +1,22 @@
+.marker{
+    transform: translate(-50%,-100%);
+    z-index: -1;
+}
+.popup{
+    max-width: 40vw;
+    padding: 1rem;
+    z-index: 100;
+}
+.popup img{
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    margin:0 auto;
+    display: block;
+}
+
+.mapboxgl-popup-close-button{
+    font-size: 30px;
+    color:#fff;
+    background-color: coral !important;
+}
