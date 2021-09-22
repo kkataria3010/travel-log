@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Switch,useHistory} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 //Routing
 import PrivateRoute from './components/routing/PrivateRoute';
 import PublicRoute from './components/routing/PublicRoute';

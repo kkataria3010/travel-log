@@ -1,7 +1,6 @@
 import axios from "axios";
 import { maintainTokens } from "./maintainTokens";
-import { useHistory } from "react-router";
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.API_URL+'/api';
 export async function post(url,data){
     const config = {
         header: {

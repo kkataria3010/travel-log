@@ -19,16 +19,15 @@ function Map() {
   });
   const [showPopup, setShowPopup] = useState(false);
   const [addEntryLocation, setAddEntryLocation] = useState(null);
-  const getEntries = async () => {
-    try {
-    const {data:{logEntries}} = await userGet('/user/getLogEntries',history);
-    // console.log(logEntries);
-    setLogEntries(logEntries);
-    }catch(error){console.log(error)}
-  }
   useEffect(() => {
-    getEntries();
-  }, []); 
+    (async () => {
+      try {
+      const {data:{logEntries}} = await userGet('/user/getLogEntries',history);
+      // console.log(logEntries);
+      setLogEntries(logEntries);
+      }catch(error){console.log(error)}
+    })();
+  }, [history]); 
   const showAddMarkerPopup = (event) => {
     const [longitude, latitude] = event.lngLat;
     setAddEntryLocation({
