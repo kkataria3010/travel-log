@@ -1,4 +1,15 @@
 # travel-log
+# Live Demo:
+https://travellogger99.herokuapp.com
+# Installation on localhost
+Run all of these commands in terminal
+```shell
+git clone https://github.com/kkataria3010/travel-log.git
+cd travel-log/client && npm install
+cd ../server && npm install
+npm run dev
+```
+Make .env files in client and server files and copy all variables from .env.example.
 # HomeScreen
 ![Home](https://user-images.githubusercontent.com/46279553/132096236-7a0be43d-0c78-43b4-a2fb-41afdc4d7887.JPG)
 # RegisterScreen
