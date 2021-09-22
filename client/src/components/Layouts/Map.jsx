@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import {get} from '../../utils/requests'; 
+import Spinner from "../Extras/Spinner";
 import './Map.css';
 // import './location-pin.svg';
 function Map(props) { 
@@ -14,15 +15,20 @@ function Map(props) {
     zoom: 3,
   });
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] =useState(true);
   const getEntries = async () => {
     const {data:{logEntries}} = await get('/public/getLogEntries');
     // console.log(logEntries);
     setLogEntries(logEntries);
   }
   useEffect(() => {
+    setLoading(true);
     getEntries();
+    setLoading(false);
   }, []); 
   return (
+  <>
+    {loading?<Spinner/>:null}
     <ReactMapGL
       {...viewport}
       mapStyle="mapbox://styles/mapbox/dark-v10"
@@ -81,6 +87,7 @@ function Map(props) {
       ))}
       {props.children}
     </ReactMapGL>
+    </>
   );
 }
 

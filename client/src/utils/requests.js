@@ -1,6 +1,6 @@
 import axios from "axios";
 import { maintainTokens } from "./maintainTokens";
-const API_URL = process.env.API_URL+'/api';
+const API_URL = `${process.env.REACT_APP_API_URL}/api`;
 export async function post(url,data){
     const config = {
         header: {
